@@ -8,6 +8,12 @@ public class Person {
     private String cpf;
     String datanascimento;
 
+    public Person(String nome, String cpf, String datanascimento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.datanascimento = datanascimento;
+    }
+
     public String getnome(){
         return nome;
     }
