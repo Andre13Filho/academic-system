@@ -10,8 +10,8 @@ public class Student extends Person{
     private String curso;
     private int matricula;
 
-    public Student(String nome, String cpf, String datanascimento, String curso, int matricula){
-        super(nome, cpf, datanascimento);
+    public Student(String nome, String cpf, String datanascimento, String curso, int matricula, String email){
+        super(nome, cpf, datanascimento, email);
         this.curso = curso;
         this.matricula = matricula;
         this.historico = new ArrayList<>();
@@ -32,9 +32,6 @@ public class Student extends Person{
     public List<AcademicTranscript> getHistorico() {
         return historico;
     }
-    public void setHistorico(List<AcademicTranscript> historico) {
-        this.historico = historico;
-    }
-    
+
   
 }
