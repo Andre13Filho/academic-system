@@ -1,7 +1,7 @@
 // representa um estudante
 // Atributos: course, "transcript" ou histórico ( lista de AcademicTranscript)
 // Métodos: matricularEmCurso, visualizarHistorico, getters e setters
-
+package model;
 import java.util.List;
 import java.util.ArrayList;
 
