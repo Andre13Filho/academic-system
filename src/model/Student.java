@@ -1,28 +1,30 @@
 // representa um estudante
 // Atributos: course, "transcript" ou histórico ( lista de AcademicTranscript)
 // Métodos: matricularEmCurso, visualizarHistorico, getters e setters
-package model;
+
 import java.util.List;
 import java.util.ArrayList;
 
 public class Student extends Person{
+    private Course course;
     private List<AcademicTranscript> historico;
-    private String curso;
     private int matricula;
 
-    public Student(String nome, String cpf, String datanascimento, String curso, int matricula, String email){
+    public Student (String nome, String cpf, String datanascimento, String curso, int matricula, String email){
         super(nome, cpf, datanascimento, email);
-        this.curso = curso;
+        this.course = course;
         this.matricula = matricula;
         this.historico = new ArrayList<>();
     }
+    
+     public Course getCourse() {
+        return course;
+    }
 
-    public String getCurso() {
-        return curso;
+    public void setCourse(Course course) {
+        this.course = course;
     }
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
+
     public int getMatricula() {
         return matricula;
     }
