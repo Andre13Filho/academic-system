@@ -1,7 +1,7 @@
 // representa uma disciplina que faz parte do curso
 // Atributos: codigo, nome, cargaHoraria, professor (Teacher)
 // Métodos: getters e setters
-
+package model;
 public class Subject {
   private String codigo;
   private String nome;
@@ -30,10 +30,4 @@ public class Subject {
   public void setCargaHoraria(int cargaHoraria) {
     this.cargaHoraria = cargaHoraria;
   }
-  public Teacher getProfessor() {
-    return professor;
-  }
-  public void vincularProfessor(Teacher professor) {
-    this.professor = professor;
-  }  
 }
