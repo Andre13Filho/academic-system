@@ -1,7 +1,7 @@
 // representa um professor
 // Atributos: departamento, disciplinasMinistradas (lista de Subject)
 // Métodos: atribuirNota(Student, Subject), getters e setters
-
+package model;
 import java.util.List;
 
 public class Teacher extends Person{

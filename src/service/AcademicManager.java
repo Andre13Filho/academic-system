@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class AcademicManager {
 
@@ -53,15 +54,13 @@ public class AcademicManager {
         return transcripts.stream()
             .anyMatch(t -> t.getAluno().equals(aluno) && t.getCurso().equals(curso));
     }
-
     public List<Course> buscarCursosDoAluno(Student aluno) {
         return transcripts.stream()
             .filter(t -> t.getAluno().equals(aluno))
             .map(AcademicTranscript::getCurso)
             .distinct()
-            .toList();
+            .collect(Collectors.toList());
     }
-
     public Optional<List<AcademicTranscript>> buscarHistoricoPorAluno(int ra) {
         Student aluno = studentsByRa.get(ra);
         if (aluno == null) {
@@ -69,7 +68,7 @@ public class AcademicManager {
         }
         List<AcademicTranscript> historicoAluno = transcripts.stream()
             .filter(t -> t.getAluno().equals(aluno))
-            .toList();
+            .collect(Collectors.toList());
         return Optional.of(historicoAluno);
     }
 
@@ -78,7 +77,7 @@ public class AcademicManager {
             throw new IllegalArgumentException("Disciplina não pode ser nula");
         }
         return transcripts.stream()
-            .filter(t -> t.getDisciplina().equals(disciplina))  
+            .filter(t -> t.getDisciplina() != null && t.getDisciplina().equals(disciplina))  
             .mapToDouble(t -> t.getNota())                      
             .average()                                         
             .orElse(0.0);                                     
@@ -119,7 +118,7 @@ public class AcademicManager {
         
         if (!aindaTemMatricula) {
             students.remove(aluno);
-            studentsByRa.remove(aluno.getRa());
+            studentsByRa.remove(aluno.getMatricula());
         }
     }
 
