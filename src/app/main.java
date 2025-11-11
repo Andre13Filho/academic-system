@@ -40,7 +40,7 @@ public class main {
         manager.vincularProfessorADisciplina(prof1, programacao);
         manager.vincularProfessorADisciplina(prof1, estruturaDados);
         manager.vincularProfessorADisciplina(prof2, bancoDados);
-    System.out.println("Professores vinculados às disciplinas via AcademicManager");
+    System.out.println("Professores vinculados às disciplinas");
         System.out.println();
 
         System.out.println("3. CRIANDO CURSO");
@@ -65,7 +65,7 @@ public class main {
         
         manager.matricularAlunoEmCurso(aluno1, cursoCienciaComp);
         manager.matricularAlunoEmCurso(aluno2, cursoCienciaComp);
-    System.out.println("Alunos matriculados no curso via AcademicManager");
+    System.out.println("Alunos matriculados no curso");
         System.out.println();
 
         System.out.println("5. LANÇANDO NOTAS NO HISTÓRICO");
@@ -86,7 +86,7 @@ public class main {
         atualizarNotaAluno(manager, aluno2, estruturaDados, 6.5);
         atualizarNotaAluno(manager, aluno2, bancoDados, 7.5);
         
-    System.out.println("Notas lançadas para todos os alunos via AcademicManager");
+    System.out.println("Notas lançadas para todos os alunos");
         System.out.println();
 
         System.out.println("6. HISTÓRICO ACADÊMICO DOS ALUNOS");
